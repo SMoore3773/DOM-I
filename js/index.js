@@ -39,11 +39,12 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 
 const ctaTitle = document.querySelector('.cta .cta-text h1');
 ctaTitle.textContent = siteContent.cta['h1'];
+ctaTitle.style.textShadow = '0 0 2rem limegreen';
 
 const btn = document.querySelector('button');
 btn.textContent = siteContent.cta.button;
@@ -62,15 +63,31 @@ linksArr[2].textContent = siteContent['nav']['nav-item-3'];
 linksArr[3].textContent = siteContent['nav']['nav-item-4'];
 linksArr[4].textContent = siteContent['nav']['nav-item-5'];
 linksArr[5].textContent = siteContent['nav']['nav-item-6'];
+linksArr.forEach(i => i.style.color = 'green');
+
+const navList = document.querySelector('nav');
+const linkSignIn = document.createElement('a');
+console.log(linkSignIn);
+linkSignIn.textContent = 'Sign In';
+linkSignIn.href = '#';
+linkSignIn.style.color = 'green';
+navList.appendChild(linkSignIn);
+const linkHome = document.createElement('a');
+linkHome.textContent = 'Home';
+linkHome.href = '#';
+linkHome.style.color = 'green';
+navList.prepend(linkHome);
 
 const h4s = document.querySelectorAll('h4');
 const h4sArr = Array.from(h4s);
-h4sArr[0].textContent = siteContent['main-content']['features-h4']
-h4sArr[1].textContent = siteContent['main-content']['about-h4']
-h4sArr[2].textContent = siteContent['main-content']['services-h4']
-h4sArr[3].textContent = siteContent['main-content']['product-h4']
-h4sArr[4].textContent = siteContent['main-content']['vision-h4']
-h4sArr[5].textContent = siteContent['contact']['contact-h4']
+h4sArr[0].textContent = siteContent['main-content']['features-h4'];
+h4sArr[1].textContent = siteContent['main-content']['about-h4'];
+h4sArr[2].textContent = siteContent['main-content']['services-h4'];
+h4sArr[3].textContent = siteContent['main-content']['product-h4'];
+h4sArr[4].textContent = siteContent['main-content']['vision-h4'];
+h4sArr[5].textContent = siteContent['contact']['contact-h4'];
+
+
 
 const mainContentP = document.querySelectorAll('.main-content p');
 const mainContentPArr = Array.from(mainContentP);
